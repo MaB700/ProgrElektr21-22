@@ -1,56 +1,26 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 03/14/2022 03:20:04 PM
--- Design Name: 
--- Module Name: project_1_4 - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity project_1_5 is
-  Port ( 
-    A : in std_logic_vector (7 downto 0);
-    B : in std_logic_vector (7 downto 0);
-    S : out std_logic_vector (8 downto 0)
-    --sw : in std_logic_vector ( 2 downto 0); -- sw(0) A sw(1) B sw(2) C_in
-    --C_in : in std_logic; -- internal
-    --led : out std_logic_vector ( 1 downto 0) -- led(0) S  led(1) C_out
-  );
+    Port ( 
+        A : in std_logic_vector (7 downto 0); -- A[0:7] are the first 8 switches, names changed to A[i] in the .xdc file
+        B : in std_logic_vector (7 downto 0); -- B[0:7] are the last 8 switches, names changed to B[i] in the .xdc file
+        S : out std_logic_vector (8 downto 0) -- S[0:8] are the 9 LED's, names changed to S[i] in the .xdc file
+        --sw : in std_logic_vector(2 downto 0); -- sw(0) A sw(1) B sw(2) C_in
+        --C_in : in std_logic; -- internal
+        --led : out std_logic_vector(1 downto 0) -- led(0) S  led(1) C_out
+    );
 end project_1_5;
 
 architecture Behavioral of project_1_5 is
     signal wire_a_b, wire_b_c, wire_c_d, wire_d_e, wire_e_f, wire_f_g, wire_g_h, wire_h_i : std_logic;
 begin
-    -- alternative loop over blocks with wire vector
+    -- alternative: loop over blocks with wire vector
     add_a : entity work.full_add
     port map (
         A => A(0),
         B => B(0),
-        C_in => '0',
+        C_in => '0', -- base full-adder block, therefore input C_in=0
         C_out => wire_a_b,
         S => S(0)
     );
