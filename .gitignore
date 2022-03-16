@@ -2,4 +2,4 @@
 *.log
 *.synctex.gz
 *.pdf
-*.DS
+*.DS_Store
