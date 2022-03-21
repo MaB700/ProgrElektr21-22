@@ -5,7 +5,8 @@ use IEEE.numeric_std.all;
 entity PWM is
     Port ( 
         CLK : in std_logic;
-        DUTY : in std_logic_vector(6 downto 0);
+        DUTY : in std_logic_vector(7 downto 0);
+        FREQ : in std_logic_vector(15 downto 0);
         PWM : out std_logic := '1'
     );
 end PWM;
@@ -46,11 +47,11 @@ begin
     begin   
         
         if rising_edge(CLK) then
-            cycle_cnt <= cycle_cnt + integer(440);                                
+            cycle_cnt <= cycle_cnt + to_integer(unsigned(FREQ));                                
             if cycle_cnt >= integer(100e6) then
                 PWM <= '1';
                 cycle_cnt <= 0;
-            elsif cycle_cnt >= to_integer(unsigned(DUTY))*1e6 then -- Duty cycle of 50%
+            elsif cycle_cnt >= to_integer(unsigned(DUTY))*195e3 then 
                 PWM <= '0';                  
             end if;
         end if;

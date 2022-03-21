@@ -1,0 +1,3 @@
+starting with low volume
+rising till 50% duty cycle
+stays at this level until the very end, then lowering to no volume very fast
