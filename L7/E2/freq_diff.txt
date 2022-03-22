@@ -1,0 +1,6 @@
+out freq should be 115200Hz
+recieved is (115200+-800)Hz depenting on bit
+
+TODO: freq problem for receiver ?
+
+bytes are correct in picocom & Saleae Logic Soft
