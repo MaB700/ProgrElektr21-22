@@ -51,14 +51,14 @@ begin
         wait for 8.68 us;
         RX <= '0'; --
         wait for 8.68 us;
-        RX <= '0';
+        RX <= '1';
         wait for 8.68 us;
         RX <= '1';
         wait for 8.68 us;
         RX <= '0';
         wait for 8.68 us;
         RX <= '1'; -- stop bit
-        wait for 8.68 us;
+        wait for 58.68 us;
     end process RX_PROC;
 
 end Behavioral;
