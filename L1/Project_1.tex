@@ -1,59 +1,34 @@
-\documentclass[a4paper, 12pt]{article}
-\usepackage{listings}
-\usepackage{xcolor}
+\chapter{Lab 1: Basics} \label{day1}
 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+The main goal of the first project in this course is to get in touch with the main concepts of the programming language ''VHDL`` and field-programmable gate arrays (FPGAs). 
 
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
-}
+First a simple program that connects the 16 switches of the ''Artix-7`` board to the corresponding LEDs was realised. Therefore ports for the switches and LEDs were added and connected via the constraints ''XDC`` file.
 
-\lstset{style=mystyle}
+Then we created a simple logic function that compares 6 switches and outputs a signal to an LED. Here, we inspected the implementation of our program in the netlist and device view provided by the ''VIVADO`` editor.
 
-\begin{document}
-\setcounter{page}{1}
+Afterwards a parity generator was coded that outputs an 0 for an even number of bits and 1 for an odd one.
 
-\section{Project 1} \label{day1}
 
-\subsection{Project 1.1}
+\section{Basic workflow}
 
-\lstinputlisting[language=VHDL]{E1/src/project_1_1.vhd}
+\lstinputlisting[language=VHDL]{./L1/E1/src/project_1_1.vhd}
 
-\subsection{Project 1.2}
+\section{Simple logic function}
 
-\lstinputlisting[language=VHDL]{E2/src/project_1_2.vhd}
+\lstinputlisting[language=VHDL]{./L1/E2/src/project_1_2.vhd}
 
-\subsection{Project 1.3}
+\section{Parity Generator}
 
-\lstinputlisting[language=VHDL]{E3/src/project_1_3.vhd}
+\lstinputlisting[language=VHDL]{./L1/E3/src/project_1_3.vhd}
 
-\subsection{Project 1.4}
+\section{Full adder}
 
-\lstinputlisting[language=VHDL]{E4/src/project_1_4.vhd}
+\lstinputlisting[language=VHDL]{./L1/E4/src/project_1_4.vhd}
 
-\subsection{Project 1.5}
+\section{Ripple-carry adder}
 
-\lstinputlisting[language=VHDL]{E5/src/project_1_5.vhd}
+\lstinputlisting[language=VHDL]{./L1/E5/src/project_1_5.vhd}
 
-\subsection{Project 1.6}
+\section{Inferring an adder from VHDL}
 
-\lstinputlisting[language=VHDL]{E6/src/project_1_6.vhd}
-\end{document}
+\lstinputlisting[language=VHDL]{./L1/E6/src/project_1_6.vhd}

@@ -1,0 +1,62 @@
+\documentclass[a4paper, 12pt]{book}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+	\setcounter{page}{1}
+
+
+\author{Martin Beyer \& Jan Leithäuser}
+\title{
+	Programmierbare Elektronik Praktikum
+	
+	Protokolle
+}
+\date{März 2022}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+\include{./L1/Project_1}
+\include{./L2/Project_2}
+\include{./L3/Project_3}
+\include{./L4/Project_4}
+\include{./L5/Project_5}
+\include{./L6/Project_6}
+\include{./L7/Project_7}
+\include{./L8/Project_8}
+%\include{./L2/Project_9}
+
+\backmatter
+% bibliography, glossary and index would go here.
+
+\end{document}
