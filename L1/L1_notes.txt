@@ -1,0 +1,2 @@
+E5/src/full_add.vhd missing in .tex (different than project_1_4.vhd)
+and used in E5/src/project_1_5
