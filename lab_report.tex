@@ -2,6 +2,10 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{acronym}
+
+\renewcommand{\acffont}[1]{\MakeLowercase{#1}}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -30,7 +34,7 @@
 \lstset{style=mystyle}
 
 \begin{document}
-	\setcounter{page}{1}
+\setcounter{page}{1}
 
 
 \author{Martin Beyer \& Jan Leithäuser}
@@ -44,6 +48,17 @@
 \frontmatter
 \maketitle
 \tableofcontents
+
+\newpage
+\section*{Nomenclature}
+\begin{acronym}
+	
+	\acro{lut}[LUT]{Look-up table}
+	\acro{fpga}[FPGA]{field-programmable gate array}
+	
+\end{acronym}
+
+
 
 \mainmatter
 \include{./L1/Project_1}

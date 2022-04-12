@@ -1,14 +1,24 @@
 \chapter{Lab 2: Conditional Assignments} \label{day2}
 
+In the second Lab we learn how to control the display of the \gls{fpga}, use entities and program a priority selection.
+
 \section{Seven-segment digit: individual segments}
+
+The seven-segment digit display can display four digits. Here, we only enabled the first digit by assigning "1110" to the anode value. The switches of the \gls{fpga} are connected to the cathode output and will control each of the seven-segments and the dot with one switch. 
 
 \lstinputlisting[language=VHDL]{./L2/E1/src/project_2_1.vhd}
 
 \section{Seven-segment digit: hexadecimal number}
 
+The goal of this exercise is to display a single hexadecimal number on the seven-digit display. This number can be input with the switches on the \gls{fpga}. The entity ``project\_2\_2'' then selects the according number for the input given by the switches. 
+
+\lstinputlisting[language=VHDL]{./L2/E2/src/project_2_2_1.vhd}
+
 \lstinputlisting[language=VHDL]{./L2/E2/src/project_2_2.vhd}
 
 \section{Seven-segment digit: ASCII character}
+
+The next challenge was to display an ASCII character. This could be done analogous to the method used in the previous exercise.
 
 \lstinputlisting[language=VHDL]{./L2/E3/src/project_2_3_1.vhd}
 
@@ -16,8 +26,12 @@
 
 \section{Priority Encoder}
 
+This priority encoder displays only the number of the highest input bit. If the first case is true the other cases will be ignored. The same is true for the ``VALID''-check. 
+
 \lstinputlisting[language=VHDL]{./L2/E4/src/project_2_4.vhd}
 
 \section{Seven-segment digit: mode selection}
+
+This last exercise combines all of the above into a single program with a mode selection. The mode selection just selects the output on the display. Every single mode that can be selected is constantly evaluated by the \gls{fpga}. 
 
 \lstinputlisting[language=VHDL]{./L2/E5/src/project_2_5x.vhd}

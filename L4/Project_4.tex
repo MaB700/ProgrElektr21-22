@@ -1,6 +1,12 @@
 \chapter{Lab 4: Driving a Seven-Segment Display} \label{day4}
 
+
+
 \section{Four-byte hex display}
+
+This four-byte hexadecimal display can display a hexadecimal number with up to 4 digits on the display of the \gls{fpga}. In the following module we instantiated the hexadecimal display from lab 2 four times and gave everyone of them four switches of the board. 
+
+Next, we created a timing multiplexer that changes the output and the target digit on the display with 400\,Hz. This frequency enables the display to output a stable image (in this case a number), a lower frequency would lead to flickering. This also means that every digit of the display has a refresh rate of 100\,Hz. Changing the image with the 100\,MHz clock leads to overlapping digits.
 
 \lstinputlisting[language=VHDL]{./L4/E1/src/project_4_1.vhd}
 
@@ -8,20 +14,34 @@
 
 \section{Decimal display for a 14-bit number}
 
+Here, we programmed a binary to decimal converter and used it to input a binary number with the switches of the \gls{fpga} board and output a decimal number on the display. We also use a ``BCD'' converter which converts a binary number into a four bit binary representations of decimal digits. If the number is too large for the display we output an error code. 
+
+The ``BCD'' converter uses the double dabble algorithm from the instructions. For the converter it was beneficial to use the variable data type as it updates continuously after every step during the algorithm rather than being updated once every cycle like a signal.
+
+To output on all four digits on the display, we reuse the previous project. 
+
 \lstinputlisting[language=VHDL]{./L4/E2/src/project_4_2.vhd}
+
+\lstinputlisting[language=VHDL]{./L4/E2/src/bcd.vhd}
 
 \section{Four-byte ASCII display}
 
+Here, we used the same build up as for the hexadecimal display from the first exercise but with an ASCII table. Therefore this module can display various numbers and letters.
+
 \lstinputlisting[language=VHDL]{./L4/E3/src/project_4_3.vhd}
+
+\lstinputlisting[language=VHDL]{./L4/E3/src/project_2_3_2.vhd}
 
 \section{Multi-purpose display}
 
+The Multi-purpose display has a mode selection input that lets the user chose a given module from the three previous exercises. This enables the display to display all of the above with just one single module. 
+
+The modes are the following :
+\begin{itemize}
+    \item "00" : 32 bit input that is directly interpreted as 8 bit cathode signals for the four digits.
+    \item "01" : The lowest 16 bits are displayed as a four bit hexadecimal number.
+    \item "10" : The lowest 14 bits are displayed in their decimal representation.
+    \item "11" : The 32 bits are interpreted as 4 ASCII characters.
+\end{itemize}
+
 \lstinputlisting[language=VHDL]{./L4/E4/src/project_4_4.vhd}
-
-\lstinputlisting[language=VHDL]{./L4/E4/src/project_4_4_1.vhd}
-
-\lstinputlisting[language=VHDL]{./L4/E4/src/project_4_4_2.vhd}
-
-\lstinputlisting[language=VHDL]{./L4/E4/src/project_4_4_3.vhd}
-
-\lstinputlisting[language=VHDL]{./L4/E4/src/project_4_4_3_1.vhd}
