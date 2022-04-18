@@ -20,7 +20,7 @@ architecture Behavioral of project_7_4 is
     signal s_valid : std_logic;
     -- signal chars : std_logic_vector(31 downto 0) := (others => '1'); -- only for *7.5 ('1' so all segments are off)
 begin
-    receiver : entity work.UART_receiver
+    receiver : entity work.UART_receiver_os
         port map(
             CLK => CLK,
             RST => BTN,
