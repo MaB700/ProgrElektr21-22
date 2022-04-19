@@ -16,8 +16,8 @@ end project_7_4;
 architecture Behavioral of project_7_4 is
     signal s_dout : std_logic_vector(7 downto 0);
     signal s_feer : std_logic;
-    signal err_count : unsigned(13 downto 0) := (others => '0');
     signal s_valid : std_logic;
+    signal chars : std_logic_vector(31 downto 0) := (others => '1');
 begin
     receiver : entity work.UART_receiver_os
         port map(
@@ -29,24 +29,21 @@ begin
             RX => RX
         );
 
-    multi_display : entity work.project_4_4
+    multi_display : entity work.project_4_4 -- display 4 ASCII chars
         port map(
             CLK => CLK,
-            I(13 downto 0) => std_logic_vector(err_count),
-            I(31 downto 14) => (others => '0'),
-            MODE => "10",
+            I => chars,
+            MODE => "11",
             C => C,
             A => A
-        );    
+        );
 
     process (CLK) is
     begin
         if rising_edge(CLK) then
-            if s_feer = '1' then
-                err_count <= err_count + 1;
-            end if;
             if s_valid = '1' then
                 led <= s_dout;
+                chars(31 downto 0) <= chars(23 downto 0) & s_dout; -- shift register for four bytes
             end if;
         end if;
     end process;

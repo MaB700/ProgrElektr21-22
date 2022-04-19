@@ -50,8 +50,7 @@ begin
                     when s_recieving =>
                         VALID <= '0';
                         if timer_T = '1' then
-                            -- done without shift register, next exercise includes one!
-                            input(bit_counter) <= RX;
+                            input(8 downto 0) <= RX & input(8 downto 1);
                             bit_counter <= bit_counter + 1;
                             if bit_counter = 8 then
                                 state <= s_read;
