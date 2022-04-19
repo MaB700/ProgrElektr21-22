@@ -65,7 +65,7 @@ begin
                 Hsync <= '0';
             elsif count_h < 2111 then -- h-back porch -1
                 Hsync <= '1';
-            else -- last cycle of h-back porch
+            else -- last cycle of h-back porch, this is the 2112 h-cycle (count_h=2111)
                 Hsync <= '1';
                 count_h <= 0; -- reset horizontal count when going to next vertical line
                 if count_v < 900 then
@@ -82,7 +82,7 @@ begin
                     vgaRed <= "0000";
                     vgaGreen <= "0000";
                     vgaBlue <= "0000";
-                else -- last cycle of v-back porch
+                else -- last cycle of v-back porch, this is the 934 v-cycle (count_v=933)
                     count_v <= 0;
                     vgaRed <= "0000";
                     vgaGreen <= "0000";
