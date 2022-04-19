@@ -1,9 +1,11 @@
 \documentclass[a4paper, 12pt]{book}
+\usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{glossaries}
+
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -34,6 +36,7 @@
 \newacronym{lut}{LUT}{Look-up table}
 \newacronym{fpga}{FPGA}{field-programmable gate array}	
 
+
 \begin{document}
 \setcounter{page}{1}
 
@@ -49,6 +52,8 @@
 \frontmatter
 \maketitle
 \tableofcontents
+
+\newpage
 
 \mainmatter
 \include{./L1/Project_1}

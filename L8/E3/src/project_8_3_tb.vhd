@@ -1,11 +1,11 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
-entity project_8_2_tb is
+entity project_8_3_tb is
 
-end project_8_2_tb;
+end project_8_3_tb;
 
-architecture Behavioral of project_8_2_tb is
+architecture Behavioral of project_8_3_tb is
 
     constant clk_time : time := 10 ns;
     -- sim inputs
@@ -49,29 +49,29 @@ begin
 
     Empty_Stack_TB : process is
     begin
-        DIN <= "01000001"; -- underflow
-        REN <= '1';
-        wait for 10 us;
+        --        DIN <= "01000001"; -- underflow
+        --        REN <= '1';
+        --        wait for 20 us;
         REN <= '0'; -- overflow
         WEN <= '1';
         DIN <= "01000011";
-        --        wait for 3 us;
+        wait for 30 us;
         --        WEN <= '0'; -- empty some data from top
         --        REN <= '1';
-        wait for 3 us;
-        REN <= '0'; -- stay at the index
-        WEN <= '0';
-        wait for 3 us;
+        --        wait for 3 us;
+        --        REN <= '0'; -- stay at the index
+        --        WEN <= '0';
+        --        wait for 3 us;
         DIN <= "01000111"; -- reading and writing at the same time
         REN <= '1';
         WEN <= '1';
-        wait for 3 us;
-        REN <= '1';
-        WEN <= '0';
-        wait for 3 us;
-        DIN <= "01001111"; -- reading and writing at the same time
-        REN <= '1';
-        WEN <= '1';
+        wait for 30 us;
+        --        REN <= '1';
+        --        WEN <= '0';
+        --        wait for 3 us;
+        --        DIN <= "01001111"; -- reading and writing at the same time
+        --        REN <= '1';
+        --        WEN <= '1';
     end process Empty_Stack_TB;
 
 end Behavioral;

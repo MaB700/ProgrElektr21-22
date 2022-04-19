@@ -1,0 +1,2 @@
+E3 no shift register
+split E4 into E4 & E5 or keep E5 as comment in E4 ?

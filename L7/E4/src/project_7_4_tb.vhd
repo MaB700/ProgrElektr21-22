@@ -1,10 +1,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
-entity project_7_3_tb is
-end project_7_3_tb;
+entity project_7_4_tb is
+end project_7_4_tb;
 
-architecture Behavioral of project_7_3_tb is
+architecture Behavioral of project_7_4_tb is
     signal CLK : std_logic;
     -- signal BTN :  std_logic;
     signal led : std_logic_vector(7 downto 0);
@@ -51,14 +51,14 @@ begin
         wait for 8.68 us;
         RX <= '0'; --
         wait for 8.68 us;
-        RX <= '0';
+        RX <= '1';
         wait for 8.68 us;
         RX <= '1';
         wait for 8.68 us;
         RX <= '0';
         wait for 8.68 us;
         RX <= '1'; -- stop bit
-        wait for 8.68 us;
+        wait for 58.68 us;
     end process RX_PROC;
 
 end Behavioral;
