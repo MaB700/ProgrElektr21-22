@@ -15,7 +15,7 @@ architecture Behavioral of BCD is
 begin
     VALID <= '0' when unsigned(BIN) > 9999 else
              '1';
-    -- “double dabble” algorithm
+    -- ''double dabble'' algorithm
     process (BIN) is -- is calculated each time BIN changes
         variable comb : unsigned(4 * 4 + 14 - 1 downto 0); -- BCD & BIN combined
     begin
