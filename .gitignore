@@ -5,3 +5,6 @@
 *.DS_Store
 *.toc
 *.out
+*.fdb_latexmk
+*.fls
+*.json
