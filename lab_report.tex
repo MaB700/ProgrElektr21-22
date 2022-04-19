@@ -3,9 +3,7 @@
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
-\usepackage{acronym}
-
-\renewcommand{\acffont}[1]{\MakeLowercase{#1}}
+\usepackage{glossaries}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -33,6 +31,9 @@
 
 \lstset{style=mystyle}
 
+\newacronym{lut}{LUT}{Look-up table}
+\newacronym{fpga}{FPGA}{field-programmable gate array}	
+
 \begin{document}
 \setcounter{page}{1}
 
@@ -49,17 +50,6 @@
 \maketitle
 \tableofcontents
 
-\newpage
-\section*{Nomenclature}
-\begin{acronym}
-	
-	\acro{lut}[LUT]{Look-up table}
-	\acro{fpga}[FPGA]{field-programmable gate array}
-	
-\end{acronym}
-
-
-
 \mainmatter
 \include{./L1/Project_1}
 \include{./L2/Project_2}
@@ -69,7 +59,7 @@
 \include{./L6/Project_6}
 \include{./L7/Project_7}
 \include{./L8/Project_8}
-%\include{./L2/Project_9}
+\include{./L9/Project_9}
 
 \backmatter
 % bibliography, glossary and index would go here.
