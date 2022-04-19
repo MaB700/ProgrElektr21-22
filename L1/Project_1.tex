@@ -19,7 +19,7 @@ Here, we created a simple logic function that compares the first 6 switches and 
 	\label{fig: schematic e_1_2_3}
 \end{figure}
 
-Just synthesising the design leads to wrong mapped connections on the FPGA. Here, the buffers are not connected to any switches or the button. This can be easily fixed by adding a constraints file that matches the used board and renaming the ports accordingly.
+Just synthesizing the design leads to wrong mapped connections on the FPGA. Here, the buffers are not connected to any switches or the button. This can be easily fixed by adding a constraints file that matches the used board and renaming the ports accordingly.
 
 \begin{figure}
 	\centering
@@ -39,7 +39,7 @@ Just synthesising the design leads to wrong mapped connections on the FPGA. Here
 
 \section{Parity Generator}
 
-The third project of lab 1 is a parity generator that outputs a 1 if an odd number of switches is turned on or off and 0 for an even number. This was realised by concaternating the xor function.
+The third project of lab 1 is a parity generator that outputs a 1 if an odd number of switches is turned on or off and 0 for an even number. This was realized by concatenating the xor function.
 
 \begin{figure}[h]
 	\centering
@@ -52,12 +52,12 @@ The third project of lab 1 is a parity generator that outputs a 1 if an odd numb
 
 \section{Full adder}
 
-The full adder has three input switch and two output LEDs. Two of the three inputs are the bits that are added and the thrid one represents a carried bit from a privious addition. The two outsputs represent one output bit and one bit that is to be carried on. 
+The full adder has three input switch and two output LEDs. Two of the three inputs are the bits that are added and the third one represents a carried bit from a previous addition. The two outputs represent one output bit and one bit that is to be carried on. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth, trim=0mm 110mm 0mm 110mm]{./L1/E4/schematic.pdf}
-	\caption{Schematic of the full adder. The synthesized design of the full adder uses two \glspl{lut} and buffers for every the in- and output. Both \glspl{lut} use just three of the six avaiable inputs to add the three numbers and calculate the first bit of the result and the carried second bit, therefore two \glspl{lut} are needed to provide the two outputs.}
+	\caption{Schematic of the full adder. The synthesized design of the full adder uses two \glspl{lut} and buffers for every the in- and output. Both \glspl{lut} use just three of the six available inputs to add the three numbers and calculate the first bit of the result and the carried second bit, therefore two \glspl{lut} are needed to provide the two outputs.}
 	\label{fig: Full Adder schematic}
 \end{figure}
 
@@ -65,12 +65,12 @@ The full adder has three input switch and two output LEDs. Two of the three inpu
 
 \section{Ripple-carry adder}
 
-The more advaned version of the previous adder is the ripple-carry adder. This is an adder composed of multiple full adders which enables the ripple-carry adder to add two 8-bit binary numbers.
+The more advanced version of the previous adder is the ripple-carry adder. This is an adder composed of multiple full adders which enables the ripple-carry adder to add two 8-bit binary numbers.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth, trim=0mm 70mm 0mm 70mm]{./L1/E5/schematic.pdf}
-	\caption{Schematic of the ripple-carry adder. This design again uses \glspl{lut} to realise the logic functions and buffers for the in- and outputs.}
+	\caption{Schematic of the ripple-carry adder. This design again uses \glspl{lut} to realize the logic functions and buffers for the in- and outputs.}
 	\label{fig: Ripple-carry adder schematic}
 \end{figure}
 
@@ -78,7 +78,7 @@ The more advaned version of the previous adder is the ripple-carry adder. This i
 
 \section{Inferring an adder from VHDL}
 
-In this last project of this lab the ``ieee.numeric\_std.all'' library is used to programm an adder. This is achieved with the ``unsigned'' data type. This data type can added with the ``+'' sign. The ``unsigned'' data type can be easily converted to a std\_logic\_vector and vice versa. 
+In this last project of this lab the ``ieee.numeric\_std.all'' library is used to program an adder. This is achieved with the ``unsigned'' data type. This data type can added with the ``+'' sign. The ``unsigned'' data type can be easily converted to a std\_logic\_vector and vice versa. 
 
 \begin{figure}[h]
 	\centering

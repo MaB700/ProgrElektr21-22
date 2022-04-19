@@ -7,4 +7,5 @@
 *.out
 *.fdb_latexmk
 *.fls
-*.ist
+*.json
+

@@ -1,0 +1,33 @@
+\chapter{Lab 9: Driving a VGA Monitor}
+
+\section{Solid color}
+
+This module is our main setup for the display. It includes all timings necessary to display a solid color on our display with HD+ resolution.
+
+\lstinputlisting[language=VHDL]{./L9/E1/src/project_9_1.vhd}
+
+\section{Patterns}
+
+Here, we created one animated and three static patterns: an animated circle as well as a checkerboard, circles and stripes.
+
+\lstinputlisting[language=VHDL]{./L9/E2/src/animated_circle.vhd}
+
+\lstinputlisting[language=VHDL]{L9/E2/src/checkboard.vhd}
+
+\lstinputlisting[language=VHDL]{L9/E2/src/circles.vhd}
+
+\lstinputlisting[language=VHDL]{L9/E2/src/stripes.vhd}
+
+\section{Video memory}
+
+This module comes with a preloaded image that is saved to the ram of the \gls{fpga} and then displayed on a screen. Therefore we used the init$\_$ram function of VHDL from the instructions. Before that, the image has been converted to a black and white image to meet the RAM limitations (max. 1.800\,Kb) of the \gls{fpga}.
+
+\lstinputlisting[language=VHDL]{L9/E3/src/project_9_3.vhd}
+
+\lstinputlisting[language=VHDL]{L9/E3/src/video_memory.vhd}
+
+\section{Video data from UART}
+
+Here, we used UART to transmit data to the video memory of the \gls{fpga}. After converting a picture to a black and white image it can be transmitted with the terminal tool.
+
+\lstinputlisting[language=VHDL]{L9/E4/src/project_9_1.vhd}

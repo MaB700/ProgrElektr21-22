@@ -1,6 +1,6 @@
 \chapter{Lab 2: Conditional Assignments} \label{day2}
 
-In the second Lab we learn how to control the display of the \gls{fpga}, use entities and programm a priority selection.
+In the second Lab we learn how to control the display of the \gls{fpga}, use entities and program a priority selection.
 
 \section{Seven-segment digit: individual segments}
 
@@ -10,15 +10,15 @@ The seven-segment digit display can display four digits. Here, we only enabled t
 
 \section{Seven-segment digit: hexadecimal number}
 
-The goal of this excercise is to display a single hexadecimal number on the seven-digit display. This number can be input with the switches on the \gls{fpga}. The entity ``project\_2\_2'' then selects the according number for the input given by the switches. 
+The goal of this exercise is to display a single hexadecimal number on the seven-digit display. This number can be input with the switches on the \gls{fpga}. The entity ``project\_2\_2'' then selects the according number for the input given by the switches. 
 
-\lstinputlisting[language=VHDL]{./L2/E2/src/project_2_2_1.vhd}
+\lstinputlisting[language=VHDL]{./L2/E2/src/project_2_1.vhd}
 
 \lstinputlisting[language=VHDL]{./L2/E2/src/project_2_2.vhd}
 
 \section{Seven-segment digit: ASCII character}
 
-The next challenge was to display an ASCII character. This could be done anologous to the methode used in the previous excercise.
+The next challenge was to display an ASCII character. This could be done analogous to the method used in the previous exercise.
 
 \lstinputlisting[language=VHDL]{./L2/E3/src/project_2_3_1.vhd}
 
@@ -32,6 +32,6 @@ This priority encoder displays only the number of the highest input bit. If the 
 
 \section{Seven-segment digit: mode selection}
 
-This last excercise combines all of the above into a single programm with a mode selection. The mode selection just selects the output on the display. Every single mode that can be selected is constantly evaluated by the \gls{fpga}. 
+This last exercise combines all of the above into a single program with a mode selection. The mode selection just selects the output on the display. Every single mode that can be selected is constantly evaluated by the \gls{fpga}. 
 
 \lstinputlisting[language=VHDL]{./L2/E5/src/project_2_5x.vhd}
