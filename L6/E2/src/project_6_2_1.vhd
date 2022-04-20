@@ -1,35 +1,32 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_1164.all;
 use IEEE.numeric_std.all;
 
 entity Frequency_Generator is
-    Port ( 
+    port (
         CLK : in std_logic;
         FREQ : in std_logic_vector(15 downto 0);
-        SND : out std_logic
+        SND : out std_logic := '1'
     );
 end Frequency_Generator;
 
 architecture Behavioral of Frequency_Generator is
-signal pwm : std_logic := '0';
---signal clock : std_logic := '0';
-constant CLK_PERIOD : time := 25.6 ms;
-
+    signal cycle_cnt : integer range 0 to 110e6 := 0; -- use a higher max value to avoid overflow
 begin
-    SND <= pwm;
-    
-    pwm_half : entity work.PWM
-    port map (
-        CLK => CLK,
-        FREQ => FREQ,
-        PWM => pwm
-    );
 
---    frequency : process is
---    begin
---        clock <= '0';
---        wait for TO_INTEGER(1 / unsigned(FREQ)) * CLK_PERIOD / 2;
---        clock <= '1';
---        wait for TO_INTEGER(1 / unsigned(FREQ)) * CLK_PERIOD / 2;
---    end process frequency;
+    process (CLK) is
+    begin
+        if rising_edge(CLK) then
+            cycle_cnt <= cycle_cnt + to_integer(unsigned(FREQ));
+            -- count how often FREQ fits into 100e6 Hz, 
+            -- same as counting to the value T_freq/T_clk and incremeting the count by only 1
+            if cycle_cnt >= integer(100e6) then
+                PWM <= '1';
+                cycle_cnt <= 0;
+            elsif cycle_cnt >= integer(50e6) then -- duty cycle of 50%
+                PWM <= '0';
+            end if;
+        end if;
+    end process;
+
 end Behavioral;
