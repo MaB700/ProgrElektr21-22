@@ -32,6 +32,8 @@ Next comes a frequency generator. Here, we use the PWM module to generate an aud
 
 \lstinputlisting[language=VHDL]{./L6/E2/src/project_6_2_1.vhd}
 
+\lstinputlisting[language=VHDL]{./L6/E2/src/project_6_2_tb.vhd}
+
 After testing the design on the board, we could hear single beats for a frequency of 1\,Hz but we would not consider this a valid sound and the maximum frequency we could hear was between 16000 and 18000\,Hz.
 
 When running the simulation we get a period of 10\,ms for a frequency of 100\,Hz, 1\,ms for 1000\,Hz and 100\,µs for 10000\,Hz. 
@@ -50,6 +52,8 @@ Here, we generate a sound with a variable duty cycle and a fixed frequency of 44
 
 \lstinputlisting[language=VHDL]{./L6/E4/src/project_6_4.vhd}
 
+\lstinputlisting[language=VHDL]{./L6/E4/src/project_6_4_1.vhd}
+
 \section{Duty-cycle regulation for variable frequency}
 
 This program combines the possibility to change the duty cycle and the frequency. Here, we chose to fix the first 6 and last 2 bits of the frequency to 0, so in total the frequency has a range from 128 to 16383\,Hz and to 0\,Hz. The duty cycle can be regulated form 0 to 100\,\% with a step size of 1/511 $\approx$ 0.2\,\%.
@@ -57,3 +61,5 @@ This program combines the possibility to change the duty cycle and the frequency
 % auch hier möglicherweise auf 255 ändern
 
 \lstinputlisting[language=VHDL]{./L6/E5/src/project_6_5.vhd}
+
+\lstinputlisting[language=VHDL]{./L6/E5/src/project_6_5_1.vhd}

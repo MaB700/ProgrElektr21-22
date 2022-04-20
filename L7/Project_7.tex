@@ -50,6 +50,14 @@ Sending 100 characters to the board we received no errors. Although when pressin
 
 To eliminate remaining transmission errors oversampling can be used to facilitate the receiver. By waiting for a short period of time after receiving the ``START'' bit the receiver can save the transmitted information without any clock discrepancies.
 
-\lstinputlisting[language=VHDL]{./L7/E3/src/project_7_3.vhd}
+\lstinputlisting[language=VHDL]{./L7/E4/src/project_7_4.vhd}
 
-\lstinputlisting[language=VHDL]{./L7/E3/src/project_7_3_1.vhd}
+\lstinputlisting[language=VHDL]{./L7/E4/src/project_7_4_1.vhd}
+
+\lstinputlisting[language=VHDL]{./L7/E4/src/project_7_4_tb.vhd}
+
+\section{RX Display}
+
+Instead of a framing error count, the last four received bits are shown on the seven-segment display.
+
+\lstinputlisting[language=VHDL]{./L7/E5/src/project_7_5.vhd}
