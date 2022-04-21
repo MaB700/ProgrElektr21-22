@@ -12,8 +12,6 @@ This module uses the 100\,Mhz clock of the \gls{fpga} and converts it into a low
 
 \lstinputlisting[language=VHDL]{./L3/E1/src/project_3_1_1.vhd}
 
-\lstinputlisting[language=VHDL]{./L3/E1/src/Constraints_all.xdc}
-
 \section{Instantiating a netlist file}
 
 In this exercise we use a given netlist file and instantiate it in our project to display a binary number on the four digit seven-segment display of the \gls{fpga}. 
@@ -42,13 +40,6 @@ Here, we programmed a counter that overflows implicitly and displays a new numbe
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.6\linewidth]{./L3/E3/BUFHCE.png}
-	\caption{This clock signal is distributed via these centrally positioned buffer units on the \gls{fpga}.} 
-	\label{fig: clock  e_3_3_1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
 	\includegraphics[width=.8\linewidth]{./L3/E3/CLK.png}
 	\caption{The distribution of the clock signal. The clock signal is distributed over the central unit on the \gls{fpga} shown in fig. \ref*{fig: clock  e_3_3_1} and in this picture on the top left corner of the image. This design ensures that all the components of the circut get almost the same clock signal to be in sync.}
 	\label{fig: clock routing e_3_3_1}
@@ -59,8 +50,6 @@ Here, we programmed a counter that overflows implicitly and displays a new numbe
 %\lstinputlisting[language=VHDL]{./L3/E3/src/project_3_1.vhd}
 
 \lstinputlisting[language=VHDL]{./L3/E3/src/project_3_3.vhd}
-
-The clock signal differs from other signal due to the required equal distribution. Therefore the \gls{fpga} has multiple central distribution units that ensure exactly this as can be seen in fig. \ref{fig: clock routing e_3_3_1}. Otherwise sequential programming cannot work correcly as intended.
 
 The clock signal differs from other signal due to the required equal distribution. Therefore the \gls{fpga} has multiple central distribution units that ensure exactly this as can be seen in fig. \ref{fig: clock routing e_3_3_1}. Otherwise sequential programming cannot work correctly as intended.
 
