@@ -8,7 +8,7 @@ The main goal of the first project of this course is to get in touch with the ma
 
 \section{Simple logic function}
 
-Here, we created a simple logic function that compares the first 6 switches and outputs HIGH to an LED if at least two of the first three and the last three switches are in the same position. Inspecting the implementation of our program in the netlist and device view provided by the ``VIVADO'' editor, we can see that all 6 input buffers are connected to one single \gls{lut}. The \gls{lut} is a component of the \gls{fpga} that provides basic logic functions. The output of the \gls{lut} is connected to the output LED.
+Here, we created a simple logic function that compares the first 6 switches and outputs HIGH to an LED if at least two of the first three and the last three switches are in the same position. Inspecting the implementation of our program in the netlist and device view provided by the ``VIVADO'' editor, we can see that all 6 input buffers are connected to one single \gls{lut}. The \gls{lut} is a component of the \gls{fpga} that can be configured to emulate basic logic functions. The output of the \gls{lut} is connected to the output LED.
 
 \lstinputlisting[language=VHDL]{./L1/E2/src/project_1_2.vhd}
 
