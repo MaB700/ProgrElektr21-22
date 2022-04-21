@@ -15,6 +15,7 @@ architecture Behavioral of project_2_5 is
     signal wire_1, wire_2, wire_3, wire_4 : std_logic_vector (7 downto 0); -- wires connecting to C based on mode
     signal wire_4_2 : std_logic_vector (2 downto 0); -- highest active switch output in binary, project_2_4
     signal wire_led : std_logic; -- used for VALID in project_2_4
+    signal wire_2_2 : std_logic_vector (7 downto 0);
 begin
     -- "00" manage 7+1 segments
     project_2_1 : entity work.project_2_1
@@ -23,11 +24,11 @@ begin
             C => wire_1,
             A => open
         );
-
+    
     -- "01" display hex digit
     project_2_2 : entity work.project_2_2
         port map(
-            I => SW(7 downto 0),
+            I => SW(3 downto 0),
             C => wire_2
         );
     
@@ -55,11 +56,15 @@ begin
             C => wire_4
         );
 
+    -- check if number is larger than 15, if so show a dash on display
+    wire_2_2 <= wire_2 when SW(7 downto 4) = b"0000" else
+                b"1011_1111";
+
     -- SW(9) & SW(8) as mode input
     -- all methods are calculated permanently, only the wire connected to C changes based on SW(9) & SW(8) 
     with SW(9 downto 8) select C <=
         wire_1 when "00",
-        wire_2 when "01",
+        wire_2_2 when "01",
         wire_3 when "10",
         wire_4 when "11";
 

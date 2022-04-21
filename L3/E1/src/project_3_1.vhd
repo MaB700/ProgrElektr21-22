@@ -19,12 +19,12 @@ architecture Behavioral of project_3_1 is
     constant max_val : integer := FREQ_IN/FREQ_OUT; -- = T_out/T_in , how often out fits into in -> wait this amount of CLK cycles
     signal count : unsigned(WIDTH - 1 downto 0) := (others => '0');
 begin
-    process (CLK) is
+    process (CLK) is    
     begin
         if rising_edge(CLK) then
             T <= '0';
             count <= count + 1;
-            if count = max_val - 1 then -- use max_val as trigger for a more precise new frequency, max_val-1 because count is a signal
+            if count = max_val - 1 then -- use max_val as trigger for a more precise new frequency, max_val-1 because count starts at 0
                 T <= '1'; -- set T to '1' for one CLK cycle
                 count <= (others => '0'); -- reset count
             end if;
