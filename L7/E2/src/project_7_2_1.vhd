@@ -21,7 +21,7 @@ architecture Behavioral of UART_sender is
     signal timer_T : std_logic;
 begin
 
-    timer : entity work.project_3_1 -- timeer module 
+    timer : entity work.project_3_1 -- timer module 
         generic map(
             FREQ_IN => 100e6,
             FREQ_OUT => 115200

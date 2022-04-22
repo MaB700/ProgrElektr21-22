@@ -6,13 +6,13 @@ The LED dimmer controls the brightness of an LED by manipulating the duty cycle 
 
 \lstinputlisting[language=VHDL]{./L6/E1/src/project_6_1.vhd}
 
-When the counter reaches the DC limit, the PWM signal goes to 0 and does not power the LED any more. If the counter reaches the limit, it resets the PWM signal to 1 and the counter to 0 and the process starts again. The brightness of the LED is now dependent on the DC: For a low DC, the LED shines dimm and bright for a DC in the order of the maximum value of the counter. Here we chose a counter with a maximum value of 511.
+When the counter reaches the DC limit, the PWM signal goes to 0 and does not power the LED anymore. If the counter reaches the limit, it resets the PWM signal to 1 and the counter to 0 and the process starts again. The brightness of the LED is now dependent on the DC: For a low DC, the LED shines dimm and bright for a DC in the order of the maximum value of the counter. Here we chose a counter with a maximum value of 255.
 
 % DC sollte ein 7 bit Vektor mit 6 downto 0 also einem maximalen Wert von 255 sein.
 
 \lstinputlisting[language=VHDL]{./L6/E1/src/project_6_1_tb.vhd}
 
-This testbench enables us to see the progression of the individual variables, signals as well as in- and outputs. The testbench is a very handy debugging tool of the VIVADO editor. Here the editor simulates the code for a given time and with customizable clocks, in- and outputs.
+This testbench enables us to see the progression of the individual variables, signals as well as in- and outputs. The testbench is a very handy debugging tool of the VIVADO editor. Here the editor simulates the code for a given time and with customizable clocks, in- and outputs. 
 
 \begin{figure}[h]
 	\centering
@@ -56,7 +56,7 @@ Here, we generate a sound with a variable duty cycle and a fixed frequency of 44
 
 \section{Duty-cycle regulation for variable frequency}
 
-This program combines the possibility to change the duty cycle and the frequency. Here, we chose to fix the first 6 and last 2 bits of the frequency to 0, so in total the frequency has a range from 128 to 16383\,Hz and to 0\,Hz. The duty cycle can be regulated form 0 to 100\,\% with a step size of 1/511 $\approx$ 0.2\,\%.
+This program combines the possibility to change the duty cycle and the frequency. Here, we chose to fix the first 6 and last 2 bits of the frequency to 0, so in total the frequency has a range from 128 to 16383\,Hz and 0\,Hz. The duty cycle can be regulated form 0 to 100\,\% with a step size of 1/255 $\approx$ 0.2\,\%.
 
 % auch hier möglicherweise auf 255 ändern
 

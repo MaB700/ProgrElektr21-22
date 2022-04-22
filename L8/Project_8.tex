@@ -12,7 +12,7 @@ The module can store 256 bytes. After 256 bytes the write address overflows and 
 
 \section{LIFO/stack}
 
-The ``LIFO'' stack works as follows: The last stored information ist the first to be output. We use it here to display the received information from the computer keyboard on the display of the \gls{fpga} after pressing the button.
+The ``LIFO'' stack works as follows: The last stored information is the first to be output. We use it here to display the received information from the computer keyboard on the display of the \gls{fpga} after pressing the button.
 
 \lstinputlisting[language=VHDL]{./L8/E2/src/project_8_2.vhd}
 
@@ -36,7 +36,7 @@ Additionally we test several borderline cases:
 
 \begin{figure}
     \includegraphics[width=.9\textwidth]{L8/E2/full.png}
-    \caption{Writing to a full stack. The stack overflows and information is overwritten.}
+    \caption{Writing to a full stack. The stack overflows.}
     \label{pic: writing to a full stack}
 \end{figure}
 
