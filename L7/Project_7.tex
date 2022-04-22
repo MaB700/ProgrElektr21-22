@@ -19,7 +19,7 @@ This simple program connects the receiver port (RX) to the transmitter port (TX)
 
 \section{UART sender}
 
-This UART sender send data from the \gls{fpga} to the computer. Here, switches on the \gls{fpga} board are used as the input to be transmitted and a button as enter. Therefore we reused the debouncer for the button from the previous exercise 3.1 as well as a timer module with an output frequency of 115200\,Hz. The actual frequency is 11428\,Hz (see fig. \ref{fig: transmitted information e_7_2}) which is no problem for the receiver.
+This UART sender send data from the \gls{fpga} to the computer. Here, switches on the \gls{fpga} board are used as the input to be transmitted and a button as enter. Therefore we reused the debouncer for the button from the previous exercise 3.1 as well as a timer module with an output frequency of 115200\,Hz. The frequency received was 115200 $\pm$ 800\,Hz depending on the transmitted bit (see fig. \ref{fig: transmitted information e_7_2}) which is no problem for the receiver.
 
 \begin{figure}[!htb]
 	\centering
