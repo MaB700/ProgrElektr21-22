@@ -2,7 +2,7 @@
 
 \section{Three-stage code lock}
 
-In this exercise we programmed a finite state machine using the case statements of ``VHDL''. This tree-stage lock uses a code that can be entered to unlock it. The code consists of three numbers and is entered with the switches of the board and every number is confirmed with an enter button. At every point before the third number has been entered the user can return to the first number with an abort button. Every time the code has been entered wrong an error message is shown and if the code has been entered wrong for the third time the lock is closed permanently. And if entered correct after one or two errors the error counter gets reset. If the lock has been opened it can be closed again with the abort button.
+In this exercise we programmed a finite state machine using the case statements of ``VHDL''. This three-stage lock uses a code that can be entered to unlock it. The code consists of three numbers and is entered with the switches of the board and every number is confirmed with an enter button. At every point before the third number has been entered the user can return to the first number with an abort button. Every time the code has been entered wrong an error message is shown and if the code has been entered wrong for the third time the lock is closed permanently. And if entered correct after one or two errors the error counter gets reset. If the lock has been opened it can be closed again with the abort button.
 
 Additionally there is a reset button that has been implemented to reset the error counter and to return the lock into its initial unlocked state. And we also implemented a program button that can be used to reprogram the code if the lock is the unlocked state.
 
